@@ -1,3 +1,4 @@
+//linear Search Using Recursion
 #include <iostream>
 using namespace std;
 bool linearSearch(int *arr,int size,int key)
