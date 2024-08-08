@@ -37,11 +37,11 @@ int Partion(int arr[] , int start , int end )
     int i = start , j = end;
     while (i < pivotIndex &&  pivotIndex < j )
     {
-        if(arr[i] < pivot)
+        if(arr[i] <= pivot)
             i++;
         if(arr[j] > pivot)
             j--;
-        if(i < pivotIndex && pivotIndex < j)
+        if(i < pivotIndex &&  pivotIndex < j )
             swap(arr[i] , arr[j]);
     }
     
