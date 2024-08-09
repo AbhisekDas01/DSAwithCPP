@@ -54,18 +54,20 @@ void insert()
 
 void delete()
 {
-    if((front == -1 && rear == -1) || front > rear)
+    if((front == -1) || front > rear)
         printf("\nQueue underflow!");
     else
     {
         printf("Deleted %d",queue[front++]);
+        if(front > rear)
+            front = rear = -1;
     }
 }
 //display fuction
 void display()
 {
     int i;
-    if((front == -1 && rear == -1) || front > rear)
+    if((front == -1 ) || front > rear)
         printf("\nQueue underflow!");
     else
     {
