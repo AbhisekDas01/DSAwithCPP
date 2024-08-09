@@ -66,13 +66,12 @@ void delete()
 //display fuction
 void display()
 {
-    int i;
     if((front == -1 ) || front > rear)
         printf("\nQueue underflow!");
     else
     {
         printf("\nQueue Elements : ");
-        for(i=front ; i<= rear; i++)
+        for(int i=front ; i<= rear; i++)
             printf("%d ",queue[i]);
     }
 }
