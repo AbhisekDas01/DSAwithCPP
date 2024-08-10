@@ -19,20 +19,11 @@ int main()
         scanf("%d",&op);
         switch(op)
         {
-        case 1:
-            insert();
-            break;
-        case 2:
-            delete();
-            break;
-        case 3:
-            display();
-            break;
-        case 4:
-            exit(0);
-            break;
-        default:
-            printf("\nInvalid Choice ");
+            case 1: insert();  break;
+            case 2: delete();  break;
+            case 3: display(); break;
+            case 4: exit(0);   break;
+            default: printf("\nInvalid Choice ");
         }
     }
     return 0 ;
@@ -81,9 +72,7 @@ void display()
         int i;
         printf("\nCircular Queue elements : ");
         for(i= front ; i != rear ; i = (i+1)%max)
-        {
             printf("%d ",cqueue[i]);
-        }
         printf("%d ",cqueue[rear]);
 
     }
