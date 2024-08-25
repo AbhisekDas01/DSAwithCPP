@@ -23,7 +23,7 @@ int main()
     int op;
     printf("Enter the operation : ");
     printf("\n1.Insert At Begin\n2.Insert At End\n3.Insert At Specific Position\n4.Display");
-    printf("\n5.Delete At Begin\n6.Delete At End\n7.Delete At Specific Position\n8.exit()");
+    printf("\n5.Delete From Begin\n6.Delete From End\n7.Delete From Specific Position\n8.exit()");
 
     do
     {
@@ -31,13 +31,13 @@ int main()
         scanf("%d", &op);
         switch (op)
         {
-        case 1:  insertBegin();       break;
-        case 2:  insertEnd();         break;
-        case 3:  insertAtpos();       break;
-        case 4:  display();           break;
-        case 5:  deleteBegin();       break;
-        case 6:  deleteEnd();         break;
-        case 7:  deleteAtpos();       break;
+        case 1:  insertBegin();        break;
+        case 2:  insertEnd();          break;
+        case 3:  insertAtpos();        break;
+        case 4:  display();            break;
+        case 5:  deleteBegin();        break;
+        case 6:  deleteEnd();          break;
+        case 7:  deleteAtpos();        break;
         case 8:  printf("Exiting....... :)");  break;
         default: printf("Invalid choice!");    break;
         }
