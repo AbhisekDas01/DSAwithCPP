@@ -11,6 +11,7 @@ struct Node
 
 void reverse(struct Node *);
 void reverse2(struct Node *,struct Node*);
+void reverse3();
 void insert(int);
 void display(struct Node *);
 
@@ -25,7 +26,8 @@ int main()
     printf("Before Reversing ");
     display(head);
     // reverse(head);
-    reverse2(NULL,head);
+    //reverse2(NULL,head);
+    reverse3();
     printf("\nAfter revesing ");
     display(head);
     return 0;
@@ -84,6 +86,21 @@ void reverse2(struct Node *prev , struct Node *current)
     //recursion 
     reverse2(current,next);
 
+}
+
+//method 3
+void reverse3()
+{
+    struct Node *prev = NULL , *current = head , *next = NULL;
+    while (current != NULL)
+    {
+        next = current->link;
+        current->link = prev;
+        prev = current;
+        current = next;
+    }
+    head = prev;
+    
 }
 
 // Display function
