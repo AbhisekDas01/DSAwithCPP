@@ -16,7 +16,7 @@ void insertAtpos();
 void deleteBegin();
 void deleteEnd();
 void deleteAtpos();
-void display();
+void display();   
 
 int main()
 {
@@ -122,12 +122,11 @@ void insertAtpos()
 
 void deleteBegin()
 {
-    struct Node *ptr;
+    struct Node *ptr = head;
     if (head == NULL)
         printf("Empty List!");
     else
     {
-        ptr = head;
         head = head->link;
         printf("Deleted %d", ptr->value);
         free(ptr);
@@ -138,16 +137,13 @@ void deleteBegin()
 // delete end
 void deleteEnd()
 {
-    struct Node *ptr, *temp;
+    struct Node *ptr = head, *temp;
     if (head == NULL)
         printf("Empty list! ");
     else if (head->link == NULL)
-    {
         deleteBegin();
-    }
     else
     {
-        ptr = head;
         while (ptr->link->link != NULL)
             ptr = ptr->link;
         temp = ptr->link;
@@ -178,8 +174,7 @@ void deleteAtpos()
                 deleteEnd();
             else
             {
-                struct Node *ptr, *temp;
-                ptr = head;
+                struct Node *ptr = head , *temp;
                 for (int i = 1; i < pos - 1; i++)
                     ptr = ptr->link;
                 temp = ptr->link;
@@ -196,12 +191,11 @@ void deleteAtpos()
 // Display function
 void display()
 {
-    struct Node *ptr;
+    struct Node *ptr = head;
     if (head == NULL)
         printf("No elements! ");
     else
     {
-        ptr = head;
         printf("List elements : ");
         while (ptr != NULL)
         {
