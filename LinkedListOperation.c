@@ -73,6 +73,7 @@ void insertBegin()
         head = ptr;
     }
     size++;
+    printf("Inserted at begin..");
 }
 
 // insert at end
@@ -89,6 +90,7 @@ void insertEnd()
         temp->link = ptr;
     }
     size++;
+    printf("Inserted at end..");
 }
 
 // insert at pos
@@ -114,6 +116,7 @@ void insertAtpos()
             ptr->link = temp->link;
             temp->link = ptr;
             size++;
+            printf("Inserted at %dth postion..",pos);
         }
     }
 }
@@ -128,7 +131,7 @@ void deleteBegin()
     else
     {
         head = head->link;
-        printf("Deleted %d", ptr->value);
+        printf("Deleted %d from begin..", ptr->value);
         free(ptr);
         size--;
     }
@@ -148,7 +151,7 @@ void deleteEnd()
             ptr = ptr->link;
         temp = ptr->link;
         ptr->link = NULL;
-        printf("Deleted %d", temp->value);
+        printf("Deleted %d from end..", temp->value);
         free(temp);
         size--;
     }
@@ -180,7 +183,7 @@ void deleteAtpos()
                 temp = ptr->link;
                 ptr->link = temp->link;
                 temp->link = NULL;
-                printf("Deleted %d", temp->value);
+                printf("Deleted %d from %dth position..", temp->value,pos);
                 free(temp);
                 size--;
             }
