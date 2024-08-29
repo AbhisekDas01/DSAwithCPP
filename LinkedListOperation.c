@@ -9,7 +9,7 @@ struct Node
 
 int size = 0; // to store the size of the list
 
-struct Node *insert();
+struct Node *CreateNode();
 void insertBegin();
 void insertEnd();
 void insertAtpos();
@@ -47,7 +47,7 @@ int main()
 }
 
 // insert function
-struct Node *insert()
+struct Node *CreateNode()
 {
     struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
     if (ptr == NULL)
@@ -64,7 +64,7 @@ struct Node *insert()
 // insert Begin
 void insertBegin()
 {
-    struct Node *ptr = insert();
+    struct Node *ptr = CreateNode();
     if (head == NULL)
         head = ptr;
     else
@@ -78,7 +78,7 @@ void insertBegin()
 // insert at end
 void insertEnd()
 {
-    struct Node *temp, *ptr = insert();
+    struct Node *temp, *ptr = CreateNode();
     if (head == NULL)
         head = ptr;
     else
@@ -107,7 +107,7 @@ void insertAtpos()
             insertEnd();
         else
         {
-            struct Node *temp, *ptr = insert();
+            struct Node *temp, *ptr = CreateNode();
             temp = head;
             for (int i = 1; i < pos - 1; i++)
                 temp = temp->link;
