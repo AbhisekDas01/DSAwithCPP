@@ -40,7 +40,7 @@ int main()
     cin >> n ; 
     //dynamically creating array 
     int *arr = new int[n];
-    cout <<"Enter the array elements : " <<endl;
+    cout <<"Enter the array elements : ";
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
