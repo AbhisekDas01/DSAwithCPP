@@ -104,10 +104,8 @@ void reverse3()
 }
 
 // Display function
-void display(struct Node *head1)
+void display(struct Node *ptr)
 {
-    struct Node *ptr;
-        ptr = head1;
         printf("List elements : ");
         while (ptr != NULL)
         {
