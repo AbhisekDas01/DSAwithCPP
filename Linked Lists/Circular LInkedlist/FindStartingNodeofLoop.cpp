@@ -25,23 +25,21 @@ class DetectLoop
         return ptr;
     }
 
-    //display function
+    // display function
     void display()
     {
-        if(head == NULL)
+        if (head == NULL)
+            cout << "No elements!" << endl;
+        else
         {
-            cout << "No elements!";
-            return;
+            Node *ptr = head;
+            cout << "List elements : ";
+            while (ptr != NULL)
+            {
+                cout << ptr->value << " ";
+                ptr = ptr->link;
+            }
         }
-
-        Node *ptr = head;
-        cout << "List elements : ";
-        do
-        {
-            cout << ptr->value << " ";
-            ptr = ptr->link;
-        } while (ptr != head);
-        
     }
 
     //floyds cycle detection algorithm
@@ -82,6 +80,20 @@ class DetectLoop
         }
         return slow;
     }
+
+
+
+    //remove loop from the list
+    void removeLoop(Node *ptr)
+    {
+        Node *startingNode = FindStartingNode(ptr);
+        Node *temp = startingNode;
+
+        while(temp->link != startingNode)
+            temp = temp->link;
+        
+        temp->link = NULL;
+    }
 };
 
 
@@ -101,6 +113,8 @@ int main()
         cout << "No loop is present..";
     else
         cout << "Starting node of loop is : " << list.FindStartingNode(list.head)->value <<endl;
-    // list.display();
+
+    list.removeLoop(list.head);
+    list.display();
     return 0;
 }
