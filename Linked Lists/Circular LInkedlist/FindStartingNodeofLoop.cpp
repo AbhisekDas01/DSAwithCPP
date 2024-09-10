@@ -45,25 +45,42 @@ class DetectLoop
     }
 
     //floyds cycle detection algorithm
-    bool floydsCycleDetection(Node *ptr)
+    Node * floydsCycleDetection(Node *ptr)
     {
         Node *slow = ptr; //slow will move one step at a time
         Node *fast = ptr; //fast will move 2 steps at a time 
 
         while(slow != NULL && fast != NULL)
         {
-            
+           
             
             slow = slow->link;
 
             fast = fast->link;
             if(fast != NULL)
                 fast = fast->link;
-                
+
             if(slow == fast)
-                return true; //if fast meets slow 
+                return slow; //if fast meets slow return slow or fast it will be a random node in a loop
         }
-        return false;
+        return NULL;
+    }
+
+    Node *FindStartingNode(Node *ptr)
+    {
+        Node *fast = floydsCycleDetection(ptr); //pass head to get the random node
+        Node *slow = ptr; //point slow back to head
+
+        //now move both one one step
+        if(fast == NULL)
+            return NULL;
+        
+        while(slow != fast)
+        {
+            slow = slow->link;
+            fast = fast->link;
+        }
+        return slow;
     }
 };
 
@@ -80,10 +97,10 @@ int main()
     list.head->link->link->link->link = list.createNode(677);
     list.head->link->link->link->link->link = list.head->link->link; //creating a loop at 100
 
-    if(list.floydsCycleDetection(list.head))
-        cout << "loop is present..";
+    if(list.FindStartingNode(list.head) == NULL)
+        cout << "No loop is present..";
     else
-        cout << "No loop is present";
+        cout << "Starting node of loop is : " << list.FindStartingNode(list.head)->value <<endl;
     // list.display();
     return 0;
 }
