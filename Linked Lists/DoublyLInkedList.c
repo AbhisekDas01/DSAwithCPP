@@ -39,32 +39,15 @@ int main()
         scanf("%d", &ch);
         switch (ch)
         {
-        case 1:
-            insertAtBegin();
-            break;
-        case 2:
-            insertAtend();
-            break;
-        case 3:
-            insertAtPos();
-            break;
-        case 4:
-            deleteBegin();
-            break;
-        case 5:
-            deleteEnd();
-            break;
-        case 6:
-            deleteFromPos();
-            break;
-        case 7:
-            display();
-            break;
-        case 8:
-            cleanup();
-            break;
-        default:
-            printf("Invalid choice!");
+        case 1: insertAtBegin();    break;
+        case 2: insertAtend();      break;
+        case 3: insertAtPos();      break;
+        case 4: deleteBegin();      break;
+        case 5: deleteEnd();        break;
+        case 6: deleteFromPos();    break;
+        case 7: display();          break;
+        case 8: cleanup();          break;
+        default: printf("Invalid choice!");
         }
     } while (ch != 8);
     return 0;
@@ -189,15 +172,12 @@ void deleteEnd()
     }
 
     // delete from pos
-    struct Node *temp = head, *ptr;
-    while (temp->next->next != NULL)
-    {
+    struct Node *temp = head;
+    while (temp->next != NULL)
         temp = temp->next;
-    }
-    ptr = temp->next;
-    temp->next = NULL;
-    printf("Deleted %d from end..", ptr->value);
-    free(ptr);
+    temp->prev->next = NULL;
+    printf("Deleted %d from end..", temp->value);
+    free(temp);
     size--;
 }
 
