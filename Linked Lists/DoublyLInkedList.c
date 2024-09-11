@@ -80,7 +80,7 @@ struct Node *createNode()
     ptr->prev = NULL;
     ptr->next = NULL;
     return ptr;
-};
+}
 
 // insert at begin
 void insertAtBegin()
