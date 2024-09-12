@@ -201,10 +201,11 @@ void display()
     else
     {
         printf("List elements : ");
-        while (ptr != NULL)
+        while (ptr != NULL) 
         {
-            printf("%d ", ptr->value);
+            printf("%d -> ",ptr->value);
             ptr = ptr->link;
         }
+    printf("NULL");
     }
 }
