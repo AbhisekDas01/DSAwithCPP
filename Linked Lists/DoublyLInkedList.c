@@ -236,16 +236,17 @@ void display()
     }
 
     struct Node *ptr = head, *temp = head;
-    printf("List elements : ");
+    printf("List elements : NULL <-> ");
     while (ptr != NULL)
     {
-        printf("%d ", ptr->value);
+        printf("%d <-> ", ptr->value);
         ptr = ptr->next;
 
         // for reverse print
         if (temp->next != NULL)
             temp = temp->next;
     }
+    printf("NULL");
 
     char c;
     printf("\nDisplay list in reverse order (y/n) : ");
@@ -258,12 +259,13 @@ void display()
 // reverse print
 void displayReverse(struct Node *tail)
 {
-    printf("\nList elements in reverse order : ");
+    printf("\nList elements in reverse order : NULL <-> ");
     while (tail != NULL)
     {
-        printf("%d ", tail->value);
+        printf("%d <-> ", tail->value);
         tail = tail->prev;
     }
+    printf("NULL");
 }
 
 //to clearing used memory
