@@ -91,8 +91,42 @@ Node* sortTwoLists(Node* first, Node* second)
     return ans;
 }
 
+
+// Function to print the linked list
+void printList(Node* node) {
+    while (node != NULL) {
+        cout << node->data << " -> ";
+        node = node->next;
+    }
+    cout << "NULL" << endl;
+}
+
 int main()
 {
-    
+    // Create first sorted linked list: 1 -> 4 -> 5 -> NULL
+    Node* first = new Node(1);
+    first->next = new Node(4);
+    first->next->next = new Node(5);
+
+    // Create second sorted linked list: 2 -> 3 -> 5 -> NULL
+    Node* second = new Node(2);
+    second->next = new Node(3);
+    second->next->next = new Node(5);
+
+    cout << "\nList 1  : ";
+    printList(first);
+    cout << "\nList 2  : ";
+    printList(second);
+
+
+    // Merge the lists
+    Node* mergedList = sortTwoLists(first, second);
+
+    // Print the merged list
+    cout << "\nMerged List : ";   
+    printList(mergedList);
+
     return 0;
 }
+
+    
