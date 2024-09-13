@@ -212,35 +212,6 @@ void deleteFromPos()
                 size--;
             }
         }
-    }if (head == NULL)
-        printf("Empty List! ");
-    else
-    {
-        int pos;
-        printf("\nEnter the position Between 1 to %d : ", size);
-        scanf("%d", &pos);
-        if (pos < 1 || pos > size)
-            printf("\nInvalid Position!");
-        else
-        {
-            if (pos == 1)
-                deleteBegin();
-            else if (pos == size)
-                deleteEnd();
-            else
-            {
-                int i;
-                struct Node *ptr = head , *temp;
-                for (i = 1; i < pos - 1; i++)
-                    ptr = ptr->link;
-                temp = ptr->link;
-                ptr->link = temp->link;
-                temp->link = NULL;
-                printf("Deleted %d from %dth position..", temp->value,pos);
-                free(temp);
-                size--;
-            }
-        }
     }
 }
 
