@@ -58,7 +58,7 @@ struct Node *createNode()
     scanf("%d",&ptr->value);
     ptr->link = NULL;
     return ptr;
-};
+}
 
 //insert begin function
 void insertBegin()
@@ -142,6 +142,7 @@ void deleteBegin()
         {
             ptr = head;
             head = NULL;
+            tail = NULL;
         }
         else
         {
