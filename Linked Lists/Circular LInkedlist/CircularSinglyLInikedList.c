@@ -136,17 +136,15 @@ void deleteBegin()
         printf("List empty!");
     else
     {
-        struct Node *ptr;
+        struct Node *ptr = head;
         //if only one node present
         if(head ->link == head)
         {
-            ptr = head;
             head = NULL;
             tail = NULL;
         }
         else
         {
-           ptr = head;
            head = head->link;
            tail->link = head;
         }
