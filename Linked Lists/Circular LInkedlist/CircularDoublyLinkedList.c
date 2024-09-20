@@ -24,6 +24,7 @@ void deleteBegin();
 void deleteEnd();
 void deleteFromPos();
 void display();
+void displayReverse();
 
 //main function
 int main()
@@ -58,9 +59,11 @@ int main()
 //Node creation
 Node *createNode()
 {
-    Node *ptr = (Node *)malloc(sizeof(Node *));
-    if(ptr == NULL)
+    Node *ptr = (Node *)malloc(sizeof(Node));
+    if(ptr == NULL){
         printf("Memory allocation failed!");
+        return NULL;
+    }
     else
     {
         printf("Enter the value : ");
@@ -148,8 +151,15 @@ void insertAtPos()
 //delete Begin
 void deleteBegin()
 {
-    if(head == NULL)
+    if(head == NULL){
         printf("List empty!");
+        return;
+    }
+    if(head == tail)
+    {
+        printf("Deleted %d ",head->value);
+        head = tail = NULL;
+    }
     else
     {
         head = head->next;
@@ -157,16 +167,22 @@ void deleteBegin()
         free(head->prev);
         head->prev = tail;
         tail->next = head;
-        size--;
     }
-
+    size--;
 }
 
 //delete end
 void deleteEnd()
 {
-    if(head == NULL)
+    if(head == NULL){
         printf("List empty!");
+        return;
+    }
+
+    if(head == tail)
+    {
+        deleteBegin();
+    }
     else
     {
         tail = tail->prev;
@@ -229,5 +245,24 @@ void display()
             ptr = ptr->next;
         } while(ptr != head);
         printf("head\n");
+
+        char ch;
+        printf("\n\nPrint list in reverse order (y/n): ");
+        scanf(" %c",&ch);
+        if(ch == 'y' || ch == 'Y')
+            displayReverse();
     }
+}
+
+//display reverse
+void displayReverse()
+{
+    Node *temp = tail;
+    printf("List elements in reverse order : ");
+    do
+    {
+        printf("%d <-> ",temp->value);
+        temp = temp->prev;
+    } while (temp != tail);
+    printf("tail\n");
 }
