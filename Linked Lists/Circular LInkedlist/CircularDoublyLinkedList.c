@@ -25,7 +25,7 @@ void deleteEnd();
 void deleteFromPos();
 void display();
 void displayReverse();
-
+void freeList();
 //main function
 int main()
 {
@@ -52,6 +52,9 @@ int main()
         default: printf("Invalid choice!");
         }
     } while (ch != 8);
+
+    //function call for memory free
+    freeList();
     return 0;
 }
 
@@ -266,3 +269,11 @@ void displayReverse()
     } while (temp != tail);
     printf("tail\n");
 }
+
+//to free up used memory
+void freeList() {
+    while (size > 0) {
+        deleteBegin();
+    }
+}
+
