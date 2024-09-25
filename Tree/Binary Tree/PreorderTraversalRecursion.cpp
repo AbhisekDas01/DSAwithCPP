@@ -1,4 +1,4 @@
-//inorder travesal follows left - root - right
+//preorder traversal -> root -> left -> right
 #include <iostream>
 using namespace std;
 
