@@ -41,7 +41,7 @@ Node *createBinaryTree(Node *root)
 }
 
 
-//inorder traversal 
+//preorder traversal 
 void preorderTraversal(Node *root){
 
     //base case 
