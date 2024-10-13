@@ -40,7 +40,7 @@ class Heap
     {
         if(size == 0)
         {
-            cout << "No elements!";
+            cout << "No elements!" << endl;
             return;
         }
 
@@ -83,6 +83,11 @@ class Heap
     }
     void printArray()
     {
+        if(size == 0)
+        {
+            cout << "No elements!" << endl;
+            return;
+        }
         cout << "Heap elements : ";
         for(int i = 1; i <= size ; i++)
         {
@@ -96,20 +101,36 @@ class Heap
 int main()
 {
     Heap h;
-    h.insert(10);
-    h.insert(30);
-    h.insert(50);
-    h.insert(20);
-    h.printArray();
-    h.deleteHeap();
-    h.printArray();
-    h.insert(7);
-    h.insert(89);
-    h.insert(79);
-    h.printArray();
-    h.deleteHeap();
-    h.printArray();
-    h.deleteHeap();
-    h.printArray();
+    cout << "Enter the operation : " << endl;
+    cout << "\n1.insert()\n2.delete()\n3.display()\n4.exit()" << endl;
+    int ch;
+    do
+    {
+        cout << "Enter your choice : ";
+        cin >> ch;
+        switch (ch)
+        {
+        case 1:
+            int data;
+            cout << "Enter the element : "; 
+            cin >> data;
+            h.insert(data);
+            break;
+
+        case 2:
+            h.deleteHeap();
+            break;
+        case 3:
+            h.printArray();
+            break;
+        case 4:
+            cout << "Exiting...";
+            break;
+        
+        default:
+            cout << "invalid choice!" << endl;            break;
+        }
+    } while (ch!=4);
+    
     return 0;
 }
