@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     //syntax 
-    //priority_queue<data_type , container , greater<int>>
+    //priority_queue<data_type , container , comparision type>
     priority_queue<int , vector<int> , greater<int>> pq;
     pq.push(90);
     cout << pq.top() << endl;
