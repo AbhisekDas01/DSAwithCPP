@@ -29,6 +29,7 @@ public:
 // Function to merge K sorted arrays
 vector<int> mergeKSortedArrays(vector<vector<int>> &arr, int k)
 {
+    //syntax priority_queue<data_type , container , comparator> name;
     priority_queue<Node *, vector<Node *>, compare> q;
     vector<int> ans;
 
