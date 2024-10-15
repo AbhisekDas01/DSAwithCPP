@@ -30,28 +30,28 @@ public:
 vector<int> mergeKSortedArrays(vector<vector<int>> &arr, int k)
 {
     //syntax priority_queue<data_type , container , comparator> name;
-    priority_queue<Node *, vector<Node *>, compare> q;
+    priority_queue<Node *, vector<Node *>, compare> minHeap;
     vector<int> ans;
 
     // Step-1: Insert the first elements of each array into the heap
     for (int i = 0; i < k; i++)
     {
         Node *temp = new Node(arr[i][0], i, 0);
-        q.push(temp);
+        minHeap.push(temp);
     }
 
     // Step-2: Process the heap to get the sorted result
-    while (!q.empty())
+    while (!minHeap.empty())
     {
-        Node *temp = q.top();
-        q.pop();
+        Node *temp = minHeap.top();
+        minHeap.pop();
         ans.push_back(temp->data);
 
         // If the next element exists in the same array, push it into the heap
         if (temp->col + 1 < arr[temp->row].size())
         {
             Node *next = new Node(arr[temp->row][temp->col + 1], temp->row, temp->col + 1);
-            q.push(next);
+            minHeap.push(next);
         }
     }
     return ans;
