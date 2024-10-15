@@ -27,7 +27,7 @@ class compare
 };
 int main()
 {
-    priority_queue<Node* , vector<Node*> , compare> q;
+    priority_queue<Node* , vector<Node*> , compare> minHeap;
     vector<vector<int>> arr(3,vector<int>(5));
 
     arr = {{56,34,55,4,7},{45,32,90,6,0},{89,78,322,900,9}};
@@ -40,13 +40,13 @@ int main()
             temp->data = arr[i][j];
             temp->row = i ;
             temp->col = j;
-            q.push(temp);
+            minHeap.push(temp);
         }
     }
 
 
-    cout<<q.top()->data;
-    q.pop();
-    cout<<q.top()->data;
+    cout<<minHeap.top()->data;
+    minHeap.pop();
+    cout<<minHeap.top()->data;
     return 0;
 }
