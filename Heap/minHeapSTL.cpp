@@ -5,10 +5,10 @@ int main()
 {
     //syntax 
     //priority_queue<data_type , container , comparision type>
-    priority_queue<int , vector<int> , greater<int>> pq;
-    pq.push(90);
-    cout << pq.top() << endl;
-    pq.push(60);
-    cout << pq.top() << endl;
+    priority_queue<int , vector<int> , greater<int>> minHeap;
+    minHeap.push(90);
+    cout << minHeap.top() << endl;
+    minHeap.push(60);
+    cout << minHeap.top() << endl;
     return 0;
 }
