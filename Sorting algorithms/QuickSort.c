@@ -1,38 +1,5 @@
 #include <stdio.h>
 
-void quickSort(int * , int , int);
-int partition(int * , int , int);
-
-//print array
-void printArray(int *arr , int size)
-{
-    int i ;
-    for(i = 0 ; i < size ; i++)
-        printf("%d ",arr[i]);
-    printf("\n");
-}
-
-int main()
-{
-    int arr[50] , size ,i;
-    printf("Enter the size of the array : ");
-    scanf("%d",&size);
-
-    printf("Enter %d elements : ",size);
-    for(i = 0 ; i < size ; i++)
-        scanf("%d" , &arr[i]);
-
-    printf("Before sorting : ");
-    printArray(arr , size);
-
-    quickSort(arr , 0 , size-1);
-
-    printf("After sorting : ");
-    printArray(arr , size);
-
-    return 0;
-}
-
 void quickSort(int *arr ,int start , int end)
 {
     //base case
@@ -69,5 +36,36 @@ int partition(int *arr ,int start , int end)
     arr[end] = arr[i];
     arr[i] = temp;
     return i;
+}
+
+
+
+//print array
+void printArray(int *arr , int size)
+{
+    for(int i = 0 ; i < size ; i++)
+        printf("%d ",arr[i]);
+    printf("\n");
+}
+
+int main()
+{
+    int arr[100] , size ,i;
+    printf("Enter size of the array : ");
+    scanf("%d",&size);
+
+    printf("Enter %d elements : ",size);
+    for(i = 0 ; i < size ; i++)
+        scanf("%d" , &arr[i]);
+
+    printf("Before sorting : ");
+    printArray(arr , size);
+
+    quickSort(arr , 0 , size-1);
+
+    printf("After sorting : ");
+    printArray(arr , size);
+
+    return 0;
 }
 
