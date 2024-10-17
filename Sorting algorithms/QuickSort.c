@@ -1,21 +1,5 @@
 #include <stdio.h>
 
-void quickSort(int *arr ,int start , int end)
-{
-    //base case
-    if(start >= end)
-        return;
-
-    //step -> 1 find pivot
-    int pivot = partition(arr , start , end);
-
-    //step -> go to left sub array
-    quickSort(arr , start , pivot-1);
-
-    //step -> 2 go to right sub array
-    quickSort(arr , pivot+1 ,end);
-}
-
 int partition(int *arr ,int start , int end)
 {
     int pivot = arr[end];
@@ -36,6 +20,23 @@ int partition(int *arr ,int start , int end)
     arr[end] = arr[i];
     arr[i] = temp;
     return i;
+}
+
+
+void quickSort(int *arr ,int start , int end)
+{
+    //base case
+    if(start >= end)
+        return;
+
+    //step -> 1 find pivot
+    int pivot = partition(arr , start , end);
+
+    //step -> go to left sub array
+    quickSort(arr , start , pivot-1);
+
+    //step -> 2 go to right sub array
+    quickSort(arr , pivot+1 ,end);
 }
 
 
