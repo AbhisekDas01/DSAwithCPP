@@ -41,14 +41,14 @@ public:
     }
 
     // take input of node pairs for edge cration
-    void takeInput(int edge)
+    void takeInput(int edge , bool directed)
     {
         cout << "Enter " << edge << " pairs of nodes : " << endl;
         for (int i = 0; i < edge; i++)
         {
             T u, v;
             cin >> u >> v;
-            addEdge(u , v , 1 ); //to make directed graph
+            addEdge(u , v , directed); //to make directed graph
         }
         cout << endl;
     }
@@ -67,9 +67,14 @@ int main()
     cout << "Enter the number of edges : ";
     cin >> edge;
 
+
+    bool directed;
+    cout << "Is the graph directed? (1 for Yes, 0 for No): ";
+    cin >> directed;
+
     Graph<int> g;
 
-    g.takeInput(edge);
+    g.takeInput(edge , directed);
     g.printList();
     return 0;
 }
