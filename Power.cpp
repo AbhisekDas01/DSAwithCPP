@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int Power(int n , int p )
+int Power(int n , int p ) 
 {
     if(p==0)
         return 1;
