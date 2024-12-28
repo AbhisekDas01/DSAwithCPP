@@ -31,7 +31,8 @@ int main() {
     int N = 5; // Total numbers from 1 to N
 
     // Find and print the missing number
-    cout << "The missing number is: " << missingNumber(arr, N) << endl;
+    int missing = missingNumber(arr, N);
+    cout << "The missing number is: " << missing << endl;
 
     return 0;
 }
