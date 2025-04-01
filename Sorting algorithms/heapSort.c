@@ -20,13 +20,13 @@ void heapify(int *arr , int i , int size){
     }
     if(largest != i){
         swap(&arr[i] , &arr[largest]);
-        heapify(arr , size , largest);
+        heapify(arr , largest , size);
     }
 }
 
 void heapSort(int *arr , int size){
     for(int i = size/2 - 1 ; i >= 0 ; i--){
-        heapify(arr , size , i);
+        heapify(arr , i , size);
     }
     for(int i = size - 1 ; i > 0 ; i--){
         swap(&arr[0] , &arr[i]);
