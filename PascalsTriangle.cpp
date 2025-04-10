@@ -2,7 +2,8 @@
 //In this case, we are given the row number r and the column number c, and we need to find out the 
 //element at position (r,c). 
 
-
+#include <iostream>
+using namespace std;
 long long nCr(int n , int r)
 {
     //find nCr most optimally
@@ -17,8 +18,7 @@ long long nCr(int n , int r)
     return res;
 }
 
-#include <iostream>
-using namespace std;
+
 int main()
 {
     int row , col;
