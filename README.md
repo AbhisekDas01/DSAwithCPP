@@ -19,6 +19,37 @@ This repository contains various Data Structures and Algorithms (DSA) implemente
 - **Sudoku Solver**: Contains algorithms to solve Sudoku puzzles.
 - **Tree**: Contains tree data structures like binary trees, binary search trees, AVL trees, and related algorithms.
 
+## File Structure
+```
+DSA
+├───Bit Manupulation
+├───Dynamic Programing
+│   └───2D DP
+├───Graph
+│   ├───Kosaraju's Algorithm
+│   ├───Mimimum SpanTree
+│   ├───single src shortest path
+│   │   ├───Bellman ford algorithm
+│   │   └───Dijkstra's Algorithm
+│   ├───Tarjan's Algorithm
+│   └───Topological Sort
+├───HashMap
+│   └───Trie
+├───Heap
+├───Linked Lists
+│   └───Circular LInkedlist
+├───Queue
+├───Root of polynomial
+├───Searching algorithms
+├───Sorting algorithms
+├───Stack
+├───Sudoku Solver
+└───Tree
+    ├───Binary Search Tree
+    └───Binary Tree
+        └───Morris Traversal
+```
+
 ## How to Use
 
 1. Clone the repository:
