@@ -3,7 +3,7 @@
 #include <limits.h>
 #include <stdbool.h>
 
-typedef struct Edge{
+typedef struct{
 
     int u , v , wt;
 } Edges;
