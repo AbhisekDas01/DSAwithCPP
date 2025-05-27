@@ -13,39 +13,18 @@ void PrintArray(int arr[] , int n )
 //partion
 int Partion(int arr[] , int start , int end )
 {
-    int pivot  = arr[start]; // taking the first element as pivot 
+    int pivot = arr[end];
+    int i = start;
 
-    int count = 0 ; // it will count the number of elements smaller  than and equal to pivot 
+    for(int j = start ; j < end ; j++){
 
-    //place the pivot element in its right place 
-    for (int i = start + 1 ; i <= end; i++)
-    {
-        if(arr[i] <= pivot )
-            count++;
+        if(arr[j] < pivot){
+            swap(arr[j] , arr[i++]);
+        }
     }
+    swap(arr[i]  , arr[end]);
 
-    //the correct index of the pivot value 
-    int pivotIndex = start + count;
-
-    //swapping the pivot value 
-    swap(arr[pivotIndex] , arr[start]);
-
-    /*
-    place all the elements smaller than pivot before it and all element greater than pivot after it
-    */
-    
-    int i = start , j = end;
-    while (i < pivotIndex &&  pivotIndex < j )
-    {
-        while(arr[i] <= pivot)
-            i++;
-        while(arr[j] > pivot)
-            j--;
-        if(i < pivotIndex &&  pivotIndex < j )
-            swap(arr[i++] , arr[j--]);
-    }
-    
-    return pivotIndex;
+    return i;
 }
 void QuickSort(int arr[] , int start , int end )
 {

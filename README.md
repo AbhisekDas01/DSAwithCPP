@@ -22,6 +22,8 @@ This repository contains various Data Structures and Algorithms (DSA) implemente
 ## File Structure
 ```
 DSA
+├───BackTracking
+│   └───Sudoku Solver
 ├───Bit Manupulation
 ├───Dynamic Programing
 │   └───2D DP
@@ -43,7 +45,7 @@ DSA
 ├───Searching algorithms
 ├───Sorting algorithms
 ├───Stack
-├───Sudoku Solver
+├───String Matching Algorithms
 └───Tree
     ├───Binary Search Tree
     └───Binary Tree
