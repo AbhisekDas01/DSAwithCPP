@@ -45,7 +45,7 @@ DSA
 ├───Searching algorithms
 ├───Sorting algorithms
 ├───Stack
-├───String Matching Algorithms
+├───String
 └───Tree
     ├───Binary Search Tree
     └───Binary Tree
