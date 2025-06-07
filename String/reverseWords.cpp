@@ -11,7 +11,52 @@ Note that s may contain leading or trailing spaces or multiple spaces between tw
 #include <iostream>
 #include <string>
 #include <stack>
+#include <algorithm>
 using namespace std;
+
+string reverseWords(string s)
+{
+
+    int n = s.length();
+
+    string word = "";
+    string ans = "";
+    for (int i = n - 1; i >= 0; i--)
+    {
+
+        if (s[i] == ' ')
+        {
+
+            if (!word.empty())
+            {
+
+                reverse(word.begin(), word.end());
+                if (ans.empty())
+                    ans += word;
+                else
+                    ans += " " + word;
+
+                word = "";
+            }
+        }
+        else
+            word.push_back(s[i]);
+    }
+
+    if (!word.empty())
+    {
+
+        reverse(word.begin(), word.end());
+        if (ans.empty())
+            ans += word;
+        else
+            ans += " " + word;
+
+        word = "";
+    }
+
+    return ans;
+}
 
 string reverseWordsStack(string s)
 {
@@ -67,7 +112,7 @@ int main()
 
     cout << "String is : " << str << endl;
 
-    str = reverseWordsStack(str);
+    str = reverseWords(str);
 
     cout << "Reverse is : " << str;
 
